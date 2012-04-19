@@ -1,0 +1,38 @@
+Timer timer = new Timer(1*24*60*60, 30);
+
+System.out.println("Simulation starting from: " + timer.getCurrentTime());
+
+while(!timer.isMaxSimulationTimeExceeded()) {
+	timer.advanceByTick();
+	System.out.println("Tick #" + timer.getCurrentTickNumber() + ", which finished at time " + timer.getCurrentTime());
+}
+
+
+System.out.println("Simulation ended at Tick #" + timer.getCurrentTickNumber() + " finished at time " + timer.getCurrentTime());
+
+
+
+String[] aircraftNames = { "Commercial Flight", "Light Aircraft", "Glider" };
+String[] textOutput1 = new String[aircraftNames.length];
+String[] textOutput2 = new String[aircraftNames.length];
+String[] textOutput3 = new String[aircraftNames.length];
+
+int[] numberInSimulation = {	 500, 					10,				 3 };
+int[] numberOfCrashes = {	 500, 					10,				 3 };
+
+for(int i=0; i<aircraftNames.length; i++) {
+	textOutput1[i] = "Total number in Simulation [" + aircraftNames[i] + "]: " + numberInSimulation[i];
+	textOutput2[i] = "Total number of crashes [" + aircraftNames[i] + "]: " + numberOfCrashes[i];
+}
+for(int i=0; i<aircraftNames.length; i++) {
+	System.out.println(textOutput1[i]);
+}
+for(int i=0; i<aircraftNames.length; i++) {
+	System.out.println(textOutput2[i]);
+}
+
+
+
+
+
+
